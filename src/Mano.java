@@ -10,7 +10,7 @@ public class Mano {
 		this.agregarCarta(carta1);
 		this.agregarCarta(carta2);
 		this.agregarCarta(carta3);
-		this.flor = hayFlor();
+		this.setFlor(hayFlor());
 	}
 	
 	public void agregarCarta(Carta carta){
@@ -66,16 +66,27 @@ public class Mano {
 	public Integer envido(){
 		Integer envido;
 		if(this.getMano().get(0).getPalo().equals(this.getMano().get(1).getPalo())){
-			envido = this.getMano().get(0).getNumero() + this.getMano().get(1).getNumero();
+			envido = 20 + this.getMano().get(0).getNumero() + this.getMano().get(1).getNumero();
 		}
 		else if(this.getMano().get(0).getPalo().equals(this.getMano().get(2).getPalo())){
-			envido = this.getMano().get(0).getNumero() + this.getMano().get(2).getNumero();
+			envido = 20 + this.getMano().get(0).getNumero() + this.getMano().get(2).getNumero();
 		}
 		else if(this.getMano().get(1).getPalo().equals(this.getMano().get(2).getPalo())){
-			envido = this.getMano().get(1).getNumero() + this.getMano().get(2).getNumero();
+			envido = 20 + this.getMano().get(1).getNumero() + this.getMano().get(2).getNumero();
 		}
 		else{
-			envido = getHighestNum(this.getMano());
+			ArrayList<Carta> lista_auxiliar = new ArrayList<Carta>();
+			for(Carta carta : this.getMano()){
+				if(!carta.esFigura(carta)){
+					lista_auxiliar.add(carta);
+				}
+			}
+			if(!lista_auxiliar.isEmpty()){
+				envido = getHighestNum(lista_auxiliar);
+			}
+			else{
+				return 0;
+			}
 		}
 		return envido;
 	}
