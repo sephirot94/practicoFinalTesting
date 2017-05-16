@@ -25,6 +25,14 @@ public class Mano {
 		this.mano = mano;
 	}
 	
+	public Boolean getFlor() {
+		return this.flor;
+	}
+
+	public void setFlor(Boolean flor) {
+		this.flor = flor;
+	}
+	
 	public static Integer getHighestNum(ArrayList<Carta> mano){
 		Integer num = 0;
 		for(Carta carta : mano){
