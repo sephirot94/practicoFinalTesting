@@ -2,13 +2,15 @@ import java.util.ArrayList;
 
 public class Mano {
 	
-	private ArrayList<Carta> mano; 
+	private ArrayList<Carta> mano;
+	private Boolean flor;
 	
 	public Mano(Carta carta1, Carta carta2, Carta carta3){		
 		this.setMano(new ArrayList<Carta>());
 		this.agregarCarta(carta1);
 		this.agregarCarta(carta2);
 		this.agregarCarta(carta3);
+		this.flor = hayFlor();
 	}
 	
 	public void agregarCarta(Carta carta){
@@ -31,6 +33,13 @@ public class Mano {
 			}
 		}
 		return num;
+	}
+	
+	public Boolean hayFlor(){
+		if(this.getMano().get(0).getPalo().equals(this.getMano().get(1).getPalo()) && this.getMano().get(0).getPalo().equals(this.getMano().get(2).getPalo())){
+			return Boolean.TRUE;
+		}
+		return Boolean.FALSE;
 	}
 	
 	public Integer envido(){
