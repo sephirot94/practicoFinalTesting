@@ -50,6 +50,19 @@ public class Mano {
 		return Boolean.FALSE;
 	}
 	
+	public Integer contraFlor(){
+		Integer tanto = 20;
+		if(this.getFlor() == Boolean.TRUE){
+			for(Integer i = 0; i < 3; i++){
+				if(this.getMano().get(i).getNumero() <= 7 ){
+					tanto += this.getMano().get(i).getNumero();
+				}
+			}
+			return tanto;
+		}
+		return 0;
+	}
+	
 	public Integer envido(){
 		Integer envido;
 		if(this.getMano().get(0).getPalo().equals(this.getMano().get(1).getPalo())){
