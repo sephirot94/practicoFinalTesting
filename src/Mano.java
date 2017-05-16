@@ -36,7 +36,7 @@ public class Mano {
 	public static Integer getHighestNum(ArrayList<Carta> mano){
 		Integer num = 0;
 		for(Carta carta : mano){
-			if(carta.getNumero() > num){
+			if(carta.getNumero() > num  && carta.getNumero() < 10){
 				num = carta.getNumero();
 			}
 		}
