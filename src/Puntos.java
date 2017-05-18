@@ -15,4 +15,8 @@ public class Puntos {
 		this.puntos = puntos;
 	}
 	
+	public void sumarPuntos(Integer puntos){
+		this.setPuntos(this.getPuntos() + puntos);
+	}
+	
 }

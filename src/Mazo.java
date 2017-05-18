@@ -37,10 +37,6 @@ public class Mazo {
 		this.mazo.add(carta);
 	}
 	
-	public void mezclarMazo(ArrayList<Carta> mazo){
-		
-	}
-	
 	public Carta retirarCarta(Integer indice, ArrayList<Carta> mazo){
 		if(!mazo.isEmpty() && mazo.size() >= indice){
 			return mazo.get(indice);
