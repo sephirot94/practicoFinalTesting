@@ -5,36 +5,40 @@ public class Mazo {
 	public ArrayList<Carta> mazo;
 	
 	public Mazo(){
-		
+		this.setMazo(new ArrayList<Carta>());
 		for(int i = 1; i<=7 ; i++){
 			Carta carta = new Carta(i, Palo.basto);
-			this.setMazo(carta);
+			this.agregarCarta(carta);
 			carta = new Carta(i, Palo.espada);
-			this.setMazo(carta);
+			this.agregarCarta(carta);
 			carta = new Carta(i, Palo.oro);
-			this.setMazo(carta);
+			this.agregarCarta(carta);
 			carta = new Carta(i, Palo.copa);
-			this.setMazo(carta);	
+			this.agregarCarta(carta);	
 		}
 		
 		for(int i = 10;i<=12;i++){
 			Carta carta = new Carta(i, Palo.basto);
-			this.setMazo(carta);
+			this.agregarCarta(carta);
 			carta = new Carta(i, Palo.espada);
-			this.setMazo(carta);
+			this.agregarCarta(carta);
 			carta = new Carta(i, Palo.oro);
-			this.setMazo(carta);
+			this.agregarCarta(carta);
 			carta = new Carta(i, Palo.copa);
-			this.setMazo(carta);	
+			this.agregarCarta(carta);	
 		}
 	}
 
 	public ArrayList<Carta> getMazo() {
 		return mazo;
 	}
+	
+	public void agregarCarta(Carta carta) {
+		this.getMazo().add(carta);
+	}
 
-	public void setMazo(Carta carta) {
-		this.mazo.add(carta);
+	public void setMazo(ArrayList<Carta> mazo) {
+		this.mazo = mazo;
 	}
 	
 	public void mezclarMazo(ArrayList<Carta> mazo){
