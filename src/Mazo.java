@@ -48,4 +48,9 @@ public class Mazo {
 		return null;
 	}
 	
+	//funcion para mezclar el mazo
+	public void mezclarMazo(){
+		Collections.shuffle(this.getMazo());
+	}
+	
 }
