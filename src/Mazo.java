@@ -52,5 +52,4 @@ public class Mazo {
 	public void mezclarMazo(){
 		Collections.shuffle(this.getMazo());
 	}
-	
 }
