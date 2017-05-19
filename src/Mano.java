@@ -91,4 +91,16 @@ public class Mano {
 		return envido;
 	}
 	
+	public void truco(){
+		
+	}
+	
+	public void reTruco(){
+		
+	}
+	
+	public void valeCuatro(){
+		
+	}
+	
 }
