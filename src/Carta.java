@@ -69,10 +69,17 @@ public class Carta {
 		return Boolean.FALSE;
 	}
 	
-	public void compararCartas(Carta carta1, Carta carta2){
-		//Este metodo compara los valores de las dos cartas 
-		//(los valores y las cartas estan seteados en una base de datos)
-		//y setea los puntos necesarios al ganador de las dos cartas
+	public String compararCartas(Carta carta1, Carta carta2){
+		if(carta1.getValor() > carta2.getValor()){
+			return "ganador carta 1";
+		}
+		if(carta1.getValor() < carta2.getValor()){
+			return "ganador carta 2";
+		}
+		if(carta1.getValor().equals(carta2.getValor())){
+			return "empate";
+		}
+		return "";
 	}
 	
 }
