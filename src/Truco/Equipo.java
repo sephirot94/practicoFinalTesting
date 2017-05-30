@@ -1,3 +1,5 @@
+package Truco;
+
 import java.util.LinkedList;
 
 public class Equipo {

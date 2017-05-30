@@ -1,3 +1,5 @@
+package Truco;
+
 import java.util.ArrayList;
 
 public class Mano {

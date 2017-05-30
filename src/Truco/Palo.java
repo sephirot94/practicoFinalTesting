@@ -1,3 +1,5 @@
+package Truco;
+
 
 public enum Palo {
 	basto,
