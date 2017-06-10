@@ -61,46 +61,50 @@ public class Mazo {
 	public void darValores(){
 		for(Carta carta : this.getMazo()){
 			if(carta.getNumero().equals(1) && carta.getPalo().equals(Palo.espada)){
-				carta.setValor(40);
+				carta.setValor(100);
+				continue;
 			}
 			if(carta.getNumero().equals(1) && carta.getPalo().equals(Palo.basto)){
-				carta.setValor(39);
+				carta.setValor(90);
+				continue;
 			}
 			if(carta.getNumero().equals(7) && carta.getPalo().equals(Palo.espada)){
-				carta.setValor(38);
+				carta.setValor(80);
+				continue;
 			}
 			if(carta.getNumero().equals(7) && carta.getPalo().equals(Palo.oro)){
-				carta.setValor(37);
+				carta.setValor(70);
+				continue;
 			}
 			if(carta.getNumero().equals(3)){
-				carta.setValor(36);
-			}
-			if(carta.getNumero().equals(2)){
-				carta.setValor(35);
-			}
-			if(carta.getNumero().equals(1)){
-				carta.setValor(34);
-			}
-			if(carta.getNumero().equals(12)){
-				carta.setValor(33);
-			}
-			if(carta.getNumero().equals(11)){
-				carta.setValor(32);
-			}
-			if(carta.getNumero().equals(10)){
-				carta.setValor(31);
-			}
-			if(carta.getNumero().equals(7)){
 				carta.setValor(30);
 			}
+			if(carta.getNumero().equals(2)){
+				carta.setValor(20);
+			}
+			if(carta.getNumero().equals(1)){
+				carta.setValor(13);
+			}
+			if(carta.getNumero().equals(12)){
+				carta.setValor(12);
+			}
+			if(carta.getNumero().equals(11)){
+				carta.setValor(11);
+			}
+			if(carta.getNumero().equals(10)){
+				carta.setValor(10);
+			}
+			if(carta.getNumero().equals(7)){
+				carta.setValor(4);
+			}
 			if(carta.getNumero().equals(6)){
-				carta.setValor(29);
+				carta.setValor(3);
 			}
 			if(carta.getNumero().equals(5)){
-				carta.setValor(28);
+				carta.setValor(2);
 			}
 			if(carta.getNumero().equals(4)){
-				carta.setValor(27);
+				carta.setValor(1);
 			}
 		}
 	}

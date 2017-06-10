@@ -14,6 +14,15 @@ public class Equipo {
 		this.setCartaGanadoraEquipo(null);
 	}
 	
+	public Equipo(Integer cantidadJugadores, Integer dificultad){
+		for(Integer i = 0; i < cantidadJugadores; i++){
+			this.agregarJugador(new Jugador(dificultad));
+		}
+		this.setNombre("Oponente");
+		this.getPuntos().setPuntos(0);
+		this.setCartaGanadoraEquipo(null);
+	}
+	
 	public String getNombre() {
 		return this.nombre;
 	}
@@ -43,6 +52,28 @@ public class Equipo {
 	
 	public void agregarJugador(Jugador jugador){
 		this.getIntegrantes().add(jugador);
+	}
+	
+	public void agregarJugadorPc(Integer dificultad){
+		this.agregarJugador(new Jugador(dificultad));
+	}
+		
+	public Boolean preguntarEnvido(){
+		for(Jugador jugador : this.getIntegrantes()){
+			if(jugador.tieneEnvido()){
+				return Boolean.TRUE;
+			}
+		}
+		return Boolean.FALSE;
+	}
+	
+	public Boolean peguntarTruco(){
+		for(Jugador jugador: this.getIntegrantes()){
+			if(jugador.tieneTruco()){
+				return Boolean.TRUE;
+			}
+		}
+		return Boolean.FALSE;
 	}
 	
 }

@@ -6,6 +6,7 @@ public class Mano {
 	
 	private ArrayList<Carta> mano;
 	private Boolean flor;
+	private Integer valorMano;
 	
 	public Mano(Carta carta1, Carta carta2, Carta carta3){		
 		this.setMano(new ArrayList<Carta>());
@@ -13,6 +14,7 @@ public class Mano {
 		this.agregarCarta(carta2);
 		this.agregarCarta(carta3);
 		this.setFlor(hayFlor());
+		this.setValorMano(this.calcularValorMano());
 	}
 	
 	public void agregarCarta(Carta carta){
@@ -35,6 +37,14 @@ public class Mano {
 		this.flor = flor;
 	}
 	
+	public Integer getValorMano() {
+		return this.valorMano;
+	}
+
+	public void setValorMano(Integer valorMano) {
+		this.valorMano = valorMano;
+	}
+
 	public static Integer getHighestNum(ArrayList<Carta> mano){
 		Integer num = 0;
 		for(Carta carta : mano){
@@ -93,16 +103,12 @@ public class Mano {
 		return envido;
 	}
 	
-	public void truco(){
-		
-	}
-	
-	public void reTruco(){
-		
-	}
-	
-	public void valeCuatro(){
-		
+	public Integer calcularValorMano(){
+		Integer suma = 0;
+		for(Carta carta : this.getMano()){
+			suma += carta.getValor();
+		}
+		return suma;
 	}
 	
 }
