@@ -48,7 +48,7 @@ public class Mazo {
 	}
 	
 	public Carta retirarCarta(Integer indice, ArrayList<Carta> mazo){
-		if(!mazo.isEmpty() && mazo.size() >= indice){
+		if(!mazo.isEmpty() && mazo.size() > indice){
 			return mazo.get(indice);
 		}
 		return null;
