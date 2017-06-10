@@ -71,17 +71,4 @@ public class Carta {
 		return Boolean.FALSE;
 	}
 	
-	public String compararCartas(Carta carta1, Carta carta2){
-		if(carta1.getValor() > carta2.getValor()){
-			return "ganador carta 1";
-		}
-		if(carta1.getValor() < carta2.getValor()){
-			return "ganador carta 2";
-		}
-		if(carta1.getValor().equals(carta2.getValor())){
-			return "empate";
-		}
-		return "";
-	}
-	
 }
