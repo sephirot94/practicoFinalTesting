@@ -10,7 +10,7 @@ public class Equipo {
 	
 	public Equipo(String nombre){
 		this.setNombre(nombre);
-		this.getPuntos().setPuntos(0);
+		this.setPuntaje(new Puntos(0));
 		this.setCartaGanadoraEquipo(null);
 	}
 	
@@ -67,7 +67,7 @@ public class Equipo {
 		return Boolean.FALSE;
 	}
 	
-	public Boolean peguntarTruco(){
+	public Boolean preguntarTruco(){
 		for(Jugador jugador: this.getIntegrantes()){
 			if(jugador.tieneTruco()){
 				return Boolean.TRUE;
