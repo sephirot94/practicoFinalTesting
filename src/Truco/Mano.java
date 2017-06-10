@@ -110,5 +110,6 @@ public class Mano {
 		}
 		return suma;
 	}
+
 	
 }
