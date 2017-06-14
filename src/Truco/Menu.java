@@ -36,7 +36,7 @@ public class Menu {
 		Integer num1;
 		Integer num2;
 		do{
-			System.out.println("Desea cerrar el juego: ");
+			System.out.println("Desea abandonar el juego: ");
 			System.out.println("1) Si");
 			System.out.println("2) No");
 			num1 = input.getIntegerInput();
@@ -50,6 +50,7 @@ public class Menu {
 			}while(input.controladorInput(num2, 1, 2));
 			if(num2.equals(1)){
 				//ejecuta metodo guardaar
+				//exit juego
 			}
 			if(num2.equals(2)){
 				//exit juego

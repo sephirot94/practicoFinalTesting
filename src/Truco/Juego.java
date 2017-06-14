@@ -12,4 +12,12 @@ public class Juego {
 		menu.menuFinal();
 	} 
 	
+	private void guardar() {
+		
+	}
+	
+	private void cargar() {
+		
+	}
+	
 }
