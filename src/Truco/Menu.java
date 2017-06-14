@@ -26,14 +26,9 @@ public class Menu {
 			dificultad = input.getIntegerInput();
 		}while(input.controladorInput(dificultad, 1, 3));
 		System.out.println("Elija su nombre: ");
-		nombre = input.getStringInput();
-//		if(num.equals(1)){
-//			Equipo equipo = new Equipo();			CHEQUEAR CONSTRUCTORES DE CLASE EQUIPO
-//			equipo.crearEquipo(num, dificultad);
-//		}
-		if(num.equals(2)){
-
-		}
+		nombre = input.getStringInput();		
+		
+		Equipo equipo = new Equipo(num, dificultad);		
 	}
 	
 	public void menuFinal() {
