@@ -1,5 +1,6 @@
 package Truco;
 
+import java.io.InputStream;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -8,20 +9,26 @@ public class InputProvider {
 	public InputProvider(){
 
 	}
+	
+	public Integer getIntegerInput() 
+	{
+		return getIntegerInput(System.in);
+	}
 
-	public Integer getIntegerInput(){
-		Scanner scanner = new Scanner(System.in);
+	public Integer getIntegerInput(InputStream readFrom) {	
 		Boolean valid = true;
 		Integer returnable = null;
 		do{
 			try {
+				Scanner scanner = new Scanner(readFrom);
 				returnable = scanner.nextInt();
+				valid = true;
+				scanner.close();
 			} catch (InputMismatchException e) {
 				System.out.println("Por favor, Ingrese un valor entero");
 				valid = false;
 			}
-		}while(valid);
-		scanner.close();
+		}while(!valid);	
 		return returnable;
 	}
 	

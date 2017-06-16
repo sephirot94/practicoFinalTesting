@@ -24,7 +24,6 @@ public class Juego {
 			Equipo equipo_oponente = new Equipo(cantidad_jugadores);
 			menu.menuFinal();
 		}while(!Juego.getFin());
-		
 	} 
 	
 }
