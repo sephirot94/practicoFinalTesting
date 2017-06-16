@@ -5,27 +5,15 @@ import java.util.Random;
 public class Jugador {
 
 	private String nombre;
-	//0 para la persona, numeros para los demas
-	private Integer dificultad;
 	private Mano mano;
 	private Boolean soyPie;
-	private Integer valorLimiteEnvido;
-	
+
 	public Jugador(String nombre){
 		this.setNombre(nombre);
-		this.setDificultad(0);
 	}
-	
-	public Jugador(Integer dificultad){
+
+	public Jugador(){
 		this.setNombre("Computadora");
-		this.setDificultad(dificultad);
-		if(dificultad == 1){
-			this.setValorLimiteEnvido(new Random().nextInt(33));
-		}else if(dificultad == 2){
-			this.setValorLimiteEnvido(25);
-		}else{
-			this.setValorLimiteEnvido(27);
-		}
 	}
 
 	public String getNombre() {
@@ -36,22 +24,6 @@ public class Jugador {
 		this.nombre = nombre;
 	}
 
-	public Integer getDificultad() {
-		return this.dificultad;
-	}
-
-	public void setDificultad(Integer dificultad) {
-		this.dificultad = dificultad;
-	}
-	
-	public Integer getValorLimiteEnvido() {
-		return this.valorLimiteEnvido;
-	}
-
-	public void setValorLimiteEnvido(Integer valorLimiteEnvido) {
-		this.valorLimiteEnvido = valorLimiteEnvido;
-	}
-	
 	public Mano getMano() {
 		return this.mano;
 	}
@@ -59,7 +31,7 @@ public class Jugador {
 	public void setMano(Mano mano) {
 		this.mano = mano;
 	}
-	
+
 	public Boolean getSoyPie() {
 		return this.soyPie;
 	}
@@ -71,26 +43,42 @@ public class Jugador {
 	public void recibirMano(Mano mano){
 		this.setMano(mano);
 	}
-	
+
 	public Carta jugarCarta(int posicion){
 		return this.getMano().getMano().remove(posicion);
 	}
-	
+
 	public void sosPie(){
 		this.setSoyPie(Boolean.TRUE);
 	}
+
+	public Boolean cantarEnvido(){
+		Integer limite = 20;
+		limite += new Random().nextInt(13);
+		if(this.getSoyPie() == Boolean.TRUE){
+			if(mano.envido() > limite){
+				return Boolean.TRUE;
+			}
+		}
+		return Boolean.FALSE;
+	}
 	
-	public Boolean tieneEnvido(){
-		if(this.getMano().envido() >= this.getValorLimiteEnvido()){
+	public void cambiarPie(){
+		if(this.getSoyPie()){
+			this.setSoyPie(Boolean.FALSE);
+		}else{
+			this.getSoyPie();
+		}
+	}
+
+	public Boolean cantarTruco(){
+		Integer limite = 20;
+		limite += new Random().nextInt(20);
+		if(limite< mano.getValorMano()){
 			return Boolean.TRUE;
 		}
 		return Boolean.FALSE;
 	}
 	
-	
-	public Boolean tieneTruco(){
-		return Boolean.TRUE;
-	}
-	
-	
+
 }

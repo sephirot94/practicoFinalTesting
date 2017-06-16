@@ -8,17 +8,21 @@ public class Equipo {
 	Carta cartaGanadoraEquipo;
 	Puntos puntos;
 	
-	public Equipo(String nombre){
-		this.setNombre(nombre);
-		this.setPuntaje(new Puntos(0));
+	public Equipo(Integer cantidadJugadores, String nombre){
+		this.setNombre("Equipo de " + nombre);
+		this.setPuntos(new Puntos());
 		this.setCartaGanadoraEquipo(null);
+		this.agregarJugador(new Jugador(nombre));
+		if(cantidadJugadores == 2){
+			this.agregarJugador(new Jugador());
+		}
 	}
 	
-	public Equipo(Integer cantidadJugadores, Integer dificultad){
+	public Equipo(Integer cantidadJugadores){
 		for(Integer i = 0; i < cantidadJugadores; i++){
-			this.agregarJugador(new Jugador(dificultad));
+			this.agregarJugador(new Jugador());
 		}
-		this.setNombre("Oponente");
+		this.setNombre("Computadora");
 		this.getPuntos().setPuntos(0);
 		this.setCartaGanadoraEquipo(null);
 	}
@@ -46,34 +50,12 @@ public class Equipo {
 	public Puntos getPuntos() {
 		return this.puntos;
 	}
-	public void setPuntaje(Puntos puntos) {
+	public void setPuntos(Puntos puntos) {
 		this.puntos = puntos;
 	}
 	
 	public void agregarJugador(Jugador jugador){
 		this.getIntegrantes().add(jugador);
-	}
-	
-	public void agregarJugadorPc(Integer dificultad){
-		this.agregarJugador(new Jugador(dificultad));
-	}
-		
-	public Boolean preguntarEnvido(){
-		for(Jugador jugador : this.getIntegrantes()){
-			if(jugador.tieneEnvido()){
-				return Boolean.TRUE;
-			}
-		}
-		return Boolean.FALSE;
-	}
-	
-	public Boolean preguntarTruco(){
-		for(Jugador jugador: this.getIntegrantes()){
-			if(jugador.tieneTruco()){
-				return Boolean.TRUE;
-			}
-		}
-		return Boolean.FALSE;
 	}
 	
 }
