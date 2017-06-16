@@ -26,9 +26,5 @@ public class TestInputProvider extends TestCase {
 			assertEquals(inputs,inputProvider.getIntegerInput(new ArrayInputStream(inputs)));
 		}
 	}
-	
-	public void testGetStringInput() {
-		String[] inputs = {"123","!%$","asd"};
-	}
 
 }
