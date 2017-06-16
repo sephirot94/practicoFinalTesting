@@ -1,5 +1,7 @@
 package Truco;
 
+import java.util.ArrayList;
+
 public class Ronda {
 	
 	private Boolean envido;
@@ -7,6 +9,9 @@ public class Ronda {
 	private Boolean reTruco;
 	private Boolean valeCuatro;
 	private Boolean flor;
+	private ArrayList<Carta> vuelta1;
+	private ArrayList<Carta> vuelta2;
+	private ArrayList<Carta> vuelta3;
 	
 	public Ronda(){
 		this.setEnvido(Boolean.FALSE);
@@ -56,7 +61,30 @@ public class Ronda {
 		this.flor = flor;
 	}
 	
-	
+	public ArrayList<Carta> getVuelta1() {
+		return this.vuelta1;
+	}
+
+	public void setVuelta1(ArrayList<Carta> vuelta1) {
+		this.vuelta1 = vuelta1;
+	}
+
+	public ArrayList<Carta> getVuelta2() {
+		return this.vuelta2;
+	}
+
+	public void setVuelta2(ArrayList<Carta> vuelta2) {
+		this.vuelta2 = vuelta2;
+	}
+
+	public ArrayList<Carta> getVuelta3() {
+		return this.vuelta3;
+	}
+
+	public void setVuelta3(ArrayList<Carta> vuelta3) {
+		this.vuelta3 = vuelta3;
+	}
+
 	public void truco(){
 		this.setTruco(Boolean.TRUE);
 	}
