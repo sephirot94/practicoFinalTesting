@@ -6,11 +6,9 @@ public class Menu {
 
 	}
 
-	public void menuInicial(){
+	public Integer menuInicial(){
 		InputProvider input = new InputProvider();
-		Integer dificultad;
 		Integer num;
-		String nombre;
 		System.out.println("Vamos a jugar al truco");
 		do{
 			System.out.println("Elija cantidad de jugadores: ");
@@ -18,48 +16,82 @@ public class Menu {
 			System.out.println("2) 4 Jugadores");
 			num = input.getIntegerInput();
 		}while(input.controladorInput(num, 1, 2));
-		do{
-			System.out.println("Elija dificultad: ");
-			System.out.println("1) Facil");
-			System.out.println("2) Medio");
-			System.out.println("3) Dificil");
-			dificultad = input.getIntegerInput();
-		}while(input.controladorInput(dificultad, 1, 3));
-		System.out.println("Elija su nombre: ");
-		nombre = input.getStringInput();		
-		
-		Equipo equipo = new Equipo(num, dificultad);		
+		return num;
 	}
-	
+
 	public void menuFinal() {
 		InputProvider input = new InputProvider();
 		Integer num1;
 		Integer num2;
 		do{
-			System.out.println("Desea abandonar el juego: ");
+			System.out.println("Desea seguir jugando: ");
 			System.out.println("1) Si");
 			System.out.println("2) No");
 			num1 = input.getIntegerInput();
 		}while(input.controladorInput(num1, 1, 2));
 		if(num1.equals(1)){
-			do {
-				System.out.println("Desea guardar la partida antes de cerrar el juego: ");
-				System.out.println("1) Si");
-				System.out.println("2) No");
-				num2 = input.getIntegerInput();
-			}while(input.controladorInput(num2, 1, 2));
-			if(num2.equals(1)){
-				//ejecuta metodo guardaar
-				//exit juego
-			}
-			if(num2.equals(2)){
-				//exit juego
-			}
+			Juego.setFin(false);
 		}
 		if(num1.equals(2)){
-			//Seguir jugando
+			Juego.setFin(true);
 		}
-		
+
+	}
+	
+	public String menuNombre() {
+		InputProvider input = new InputProvider();
+		System.out.println("Elija su nombre: ");
+		return input.getStringInput();
+	}
+
+	public void menuRespuestaTruco() {
+		InputProvider input = new InputProvider();
+		Integer num1;
+		do{
+			System.out.println("El oponente canto truco: ");
+			System.out.println("1) Quiero");
+			System.out.println("2) No quiero");
+			System.out.println("3) Quiero retruco");
+			num1 = input.getIntegerInput();
+		}while(input.controladorInput(num1, 1, 3));
+	}
+	
+	public void menuRespuestaReTruco() {
+		InputProvider input = new InputProvider();
+		Integer num1;
+		do{
+			System.out.println("El oponente canto retruco: ");
+			System.out.println("1) Quiero");
+			System.out.println("2) No quiero");
+			System.out.println("3) Quiero vale 4");
+			num1 = input.getIntegerInput();
+		}while(input.controladorInput(num1, 1, 3));
+	}
+	
+	public void menuRespuestaVale4() {
+		InputProvider input = new InputProvider();
+		Integer num1;
+		do{
+			System.out.println("El oponente canto vale 4: ");
+			System.out.println("1) Quiero");
+			System.out.println("2) No quiero");
+			num1 = input.getIntegerInput();
+		}while(input.controladorInput(num1, 1, 2));
+	}
+	
+	public void menuCartas(Mano cartas) {
+		System.out.println("Sus cartas son: ");
+		Integer i = 1;
+		for(Carta carta : cartas.getMano()) {
+			System.out.println(i + ")" + " " + carta.getNumero() + " " + carta.getPalo());
+			i++;
+		}
+	}
+	
+	public void menuEnvido() {
+		System.out.println("El oponente canto envido: ");
+		System.out.println("1) Quiero");
+		System.out.println("2) No quiero");
 	}
 
 

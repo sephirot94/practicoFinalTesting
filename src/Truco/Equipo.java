@@ -10,7 +10,7 @@ public class Equipo {
 	
 	public Equipo(String nombre){
 		this.setNombre(nombre);
-		this.setPuntaje(new Puntos(0));
+		this.setPuntos(new Puntos());
 		this.setCartaGanadoraEquipo(null);
 	}
 	
@@ -46,7 +46,7 @@ public class Equipo {
 	public Puntos getPuntos() {
 		return this.puntos;
 	}
-	public void setPuntaje(Puntos puntos) {
+	public void setPuntos(Puntos puntos) {
 		this.puntos = puntos;
 	}
 	

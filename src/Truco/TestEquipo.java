@@ -44,14 +44,14 @@ public class TestEquipo extends TestCase {
 	}
 	
 	public void testGetPuntos() {
-		Puntos puntos = new Puntos(15);
-		equipo.setPuntaje(puntos);
+		Puntos puntos = new Puntos();
+		equipo.setPuntos(puntos);
 		assertEquals(puntos, equipo.getPuntos());
 	}
 
 	public void testSetPuntaje() {
-		Puntos puntos = new Puntos(15);
-		equipo.setPuntaje(puntos);
+		Puntos puntos = new Puntos();
+		equipo.setPuntos(puntos);
 		assertEquals(puntos, equipo.getPuntos());
 	}
 	

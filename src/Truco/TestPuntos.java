@@ -7,7 +7,7 @@ public class TestPuntos extends TestCase {
 	private Puntos puntos;
 	
 	public void setUp() {
-		puntos = new Puntos(0);
+		puntos = new Puntos();
 	}
 	
 	public void testGetPuntos(){

@@ -5,8 +5,8 @@ public class Puntos {
 	
 	private Integer puntos;
 	
-	public Puntos(Integer puntos){
-		this.setPuntos(puntos);
+	public Puntos(){
+		
 	}
 
 	public Integer getPuntos() {
