@@ -35,6 +35,7 @@ public class Juego {
 				jugador.setMano(mano);
 				posicion+= 3;
 			}
+			menu.menuCartas(equipo_jugador.getIntegrantes().get(0).getMano());
 			menu.menuFinal();
 		}while(!Juego.getFin());
 	} 
