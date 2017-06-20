@@ -21,7 +21,7 @@ public class InputProvider {
 		do{
 			valid = true;
 			try {
-				Scanner scanner = new Scanner(readFrom);
+				Scanner scanner = new Scanner(System.in);
 				returnable = scanner.nextInt();
 				scanner.close();
 			} catch (Exception e) {
