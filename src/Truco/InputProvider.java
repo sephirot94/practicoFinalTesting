@@ -12,16 +12,17 @@ public class InputProvider {
 	
 	public Integer getIntegerInput() 
 	{
-		return getIntegerInput(System.in);
+		return this.getIntegerInput(System.in);
 	}
 
 	public Integer getIntegerInput(InputStream readFrom) {	
 		Boolean valid = true;
 		Integer returnable = null;
+		Scanner scanner;
 		do{
 			valid = true;
 			try {
-				Scanner scanner = new Scanner(readFrom);
+				scanner = new Scanner(readFrom);
 				returnable = scanner.nextInt();
 				scanner.close();
 			} catch (Exception e) {
