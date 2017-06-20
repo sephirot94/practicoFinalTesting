@@ -40,17 +40,23 @@ public class Juego {
 			}
 			for(Integer i=0;i<3;i++){
 				if(cantidad_jugadores_equipo == 2){
+					System.out.println("Turno de: " + nombre_jugador);
 					menu.menuCartas(equipo_jugador.getIntegrantes().get(0).getMano());
 					Integer carta = input.getIntegerInput();
 					user.jugarCarta(carta-1);
+					System.out.println("Turno de: Openente1");
 					equipo_oponente.getIntegrantes().get(0).jugarCarta(Mano.getPosicionCartaMayorValor(equipo_oponente.getIntegrantes().get(0).getMano()));
+					System.out.println("Turno de: Compañero");
 					equipo_jugador.getIntegrantes().get(1).jugarCarta(Mano.getPosicionCartaMayorValor(equipo_jugador.getIntegrantes().get(1).getMano()));
+					System.out.println("Turno de: Oponente2");
 					equipo_oponente.getIntegrantes().get(1).jugarCarta(Mano.getPosicionCartaMayorValor(equipo_oponente.getIntegrantes().get(1).getMano()));
 				}
 				else{
+					System.out.println("Turno de: " + nombre_jugador);
 					menu.menuCartas(equipo_jugador.getIntegrantes().get(0).getMano());
 					Integer carta = input.getIntegerInput();
 					user.jugarCarta(carta-1);
+					System.out.println("Turno de: Openente");
 					equipo_oponente.getIntegrantes().get(0).jugarCarta(Mano.getPosicionCartaMayorValor(equipo_oponente.getIntegrantes().get(0).getMano()));
 				}
 			}
