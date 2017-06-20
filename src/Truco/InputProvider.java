@@ -22,6 +22,7 @@ public class InputProvider {
 			valid = true;
 			try {
 				Scanner scanner = new Scanner(readFrom);
+				System.in.skip(System.in.available());
 				returnable = scanner.nextInt();
 			} catch (Exception e) {
 				System.out.println("Por favor, Ingrese un valor entero");
@@ -36,7 +37,6 @@ public class InputProvider {
 		System.in.skip(System.in.available());
 		String returnable;
 		returnable = scanner.nextLine();
-		scanner.close();
 		return returnable;
 	}
 	
