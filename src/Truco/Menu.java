@@ -44,16 +44,15 @@ public class Menu {
 		return input.getStringInput();
 	}
 
-	public void menuRespuestaTruco() {
+	public void menuCantarTruco() {
 		InputProvider input = new InputProvider();
 		Integer num1;
 		do{
-			System.out.println("El oponente canto truco: ");
-			System.out.println("1) Quiero");
-			System.out.println("2) No quiero");
-			System.out.println("3) Quiero retruco");
+			System.out.println("Desea cantar truco?: ");
+			System.out.println("1) Si");
+			System.out.println("2) No");
 			num1 = input.getIntegerInput();
-		}while(!input.controladorInput(num1, 1, 3));
+		}while(!input.controladorInput(num1, 1, 2));
 	}
 	
 	public void menuRespuestaReTruco() {
@@ -68,17 +67,6 @@ public class Menu {
 		}while(!input.controladorInput(num1, 1, 3));
 	}
 	
-	public void menuRespuestaVale4() {
-		InputProvider input = new InputProvider();
-		Integer num1;
-		do{
-			System.out.println("El oponente canto vale 4: ");
-			System.out.println("1) Quiero");
-			System.out.println("2) No quiero");
-			num1 = input.getIntegerInput();
-		}while(!input.controladorInput(num1, 1, 2));
-	}
-	
 	public void menuCartas(Mano cartas) {
 		System.out.println("Sus cartas son: ");
 		Integer i = 1;
@@ -89,9 +77,9 @@ public class Menu {
 	}
 	
 	public void menuEnvido() {
-		System.out.println("El oponente canto envido: ");
-		System.out.println("1) Quiero");
-		System.out.println("2) No quiero");
+		System.out.println("Desea cantar envido?: ");
+		System.out.println("1) Si");
+		System.out.println("2) No");
 	}
 
 
