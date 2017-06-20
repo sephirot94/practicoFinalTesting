@@ -1,7 +1,7 @@
+
 package Truco;
 
 import java.io.InputStream;
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class InputProvider {
