@@ -45,6 +45,8 @@ public class Jugador {
 	}
 
 	public Carta jugarCarta(int posicion){
+		System.out.println("Carta jugada: " + this.getMano().getMano().get(posicion).getNumero() + " "
+				+ this.getMano().getMano().get(posicion).getPalo());
 		return this.getMano().getMano().remove(posicion);
 	}
 
