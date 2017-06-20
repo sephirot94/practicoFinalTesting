@@ -12,7 +12,7 @@ public class Juego {
 		Juego.fin = fin;
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args)throws Exception{
 		Mazo mazo = new Mazo();
 		Menu menu = new Menu();
 		InputProvider input = new InputProvider();

@@ -38,7 +38,7 @@ public class Menu {
 
 	}
 	
-	public String menuNombre() {
+	public String menuNombre() throws Exception{
 		InputProvider input = new InputProvider();
 		System.out.println("Elija su nombre: ");
 		return input.getStringInput();

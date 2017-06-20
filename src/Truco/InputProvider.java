@@ -23,18 +23,17 @@ public class InputProvider {
 			try {
 				Scanner scanner = new Scanner(readFrom);
 				returnable = scanner.nextInt();
-				scanner.close();
 			} catch (Exception e) {
-//				System.out.println("Por favor, Ingrese un valor entero");
-				System.out.println(e);
+				System.out.println("Por favor, Ingrese un valor entero");
 				valid = false;
 			}
 		}while(!valid);	
 		return returnable;
 	}
 	
-	public String getStringInput() {
+	public String getStringInput() throws Exception{
 		Scanner scanner = new Scanner(System.in);
+		System.in.skip(System.in.available());
 		String returnable;
 		returnable = scanner.nextLine();
 		scanner.close();
