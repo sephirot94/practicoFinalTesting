@@ -15,7 +15,7 @@ public class Menu {
 			System.out.println("1) 2 Jugadores");
 			System.out.println("2) 4 Jugadores");
 			num = input.getIntegerInput();
-		}while(input.controladorInput(num, 1, 2));
+		}while(!input.controladorInput(num, 1, 2));
 		return num;
 	}
 
@@ -28,7 +28,7 @@ public class Menu {
 			System.out.println("1) Si");
 			System.out.println("2) No");
 			num1 = input.getIntegerInput();
-		}while(input.controladorInput(num1, 1, 2));
+		}while(!input.controladorInput(num1, 1, 2));
 		if(num1.equals(1)){
 			Juego.setFin(false);
 		}
@@ -53,7 +53,7 @@ public class Menu {
 			System.out.println("2) No quiero");
 			System.out.println("3) Quiero retruco");
 			num1 = input.getIntegerInput();
-		}while(input.controladorInput(num1, 1, 3));
+		}while(!input.controladorInput(num1, 1, 3));
 	}
 	
 	public void menuRespuestaReTruco() {
@@ -65,7 +65,7 @@ public class Menu {
 			System.out.println("2) No quiero");
 			System.out.println("3) Quiero vale 4");
 			num1 = input.getIntegerInput();
-		}while(input.controladorInput(num1, 1, 3));
+		}while(!input.controladorInput(num1, 1, 3));
 	}
 	
 	public void menuRespuestaVale4() {
@@ -76,7 +76,7 @@ public class Menu {
 			System.out.println("1) Quiero");
 			System.out.println("2) No quiero");
 			num1 = input.getIntegerInput();
-		}while(input.controladorInput(num1, 1, 2));
+		}while(!input.controladorInput(num1, 1, 2));
 	}
 	
 	public void menuCartas(Mano cartas) {

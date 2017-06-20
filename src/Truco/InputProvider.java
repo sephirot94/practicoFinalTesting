@@ -19,13 +19,14 @@ public class InputProvider {
 		Boolean valid = true;
 		Integer returnable = null;
 		do{
+			valid = true;
 			try {
 				Scanner scanner = new Scanner(readFrom);
 				returnable = scanner.nextInt();
-				valid = true;
 				scanner.close();
-			} catch (InputMismatchException e) {
-				System.out.println("Por favor, Ingrese un valor entero");
+			} catch (Exception e) {
+//				System.out.println("Por favor, Ingrese un valor entero");
+				System.out.println(e);
 				valid = false;
 			}
 		}while(!valid);	
