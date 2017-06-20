@@ -9,6 +9,7 @@ public class Equipo {
 	Puntos puntos;
 	
 	public Equipo(Integer cantidadJugadores, String nombre){
+		this.setIntegrantes(new LinkedList<Jugador>());
 		this.setNombre("Equipo de " + nombre);
 		this.setPuntos(new Puntos());
 		this.setCartaGanadoraEquipo(null);
@@ -19,9 +20,11 @@ public class Equipo {
 	}
 	
 	public Equipo(Integer cantidadJugadores){
+		this.setIntegrantes(new LinkedList<Jugador>());
 		for(Integer i = 0; i < cantidadJugadores; i++){
 			this.agregarJugador(new Jugador());
 		}
+		this.setPuntos(new Puntos());
 		this.setNombre("Computadora");
 		this.getPuntos().setPuntos(0);
 		this.setCartaGanadoraEquipo(null);
