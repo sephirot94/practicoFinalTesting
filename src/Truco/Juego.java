@@ -42,9 +42,9 @@ public class Juego {
 				menu.menuCartas(equipo_jugador.getIntegrantes().get(0).getMano());
 				Integer carta = input.getIntegerInput();
 				user.jugarCarta(carta);
-				equipo_oponente.getIntegrantes().get(0).jugarCarta(Mano.getHighestNum(equipo_oponente.getIntegrantes().get(0).getMano().getMano()));
-				equipo_jugador.getIntegrantes().get(1).jugarCarta(Mano.getHighestNum(equipo_oponente.getIntegrantes().get(1).getMano().getMano()));
-				equipo_oponente.getIntegrantes().get(1).jugarCarta(Mano.getHighestNum(equipo_oponente.getIntegrantes().get(1).getMano().getMano()));
+				equipo_oponente.getIntegrantes().get(0).jugarCarta(Mano.getPosicionCartaMayorValor(equipo_oponente.getIntegrantes().get(0).getMano()));
+				equipo_jugador.getIntegrantes().get(1).jugarCarta(Mano.getPosicionCartaMayorValor(equipo_jugador.getIntegrantes().get(1).getMano()));
+				equipo_oponente.getIntegrantes().get(1).jugarCarta(Mano.getPosicionCartaMayorValor(equipo_oponente.getIntegrantes().get(1).getMano()));
 			}
 			menu.menuFinal();
 		} while (!Juego.getFin());

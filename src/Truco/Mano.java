@@ -49,10 +49,19 @@ public class Mano {
 		Integer num = 0;
 		for(Carta carta : mano){
 			if(carta.getNumero() > num  && carta.getNumero() < 10){
-				num = carta.getNumero();
+				num = carta.getNumero();				
 			}
 		}
 		return num;
+	}
+	
+	public static Integer getPosicionCartaMayorValor(Mano mano) {
+		Integer posicion = 0;
+		for(int i=0;i<mano.getMano().size();i++) {
+			if(mano.getMano().get(i).getValor() > mano.getMano().get(posicion).getValor())
+				posicion = i;
+		}
+		return posicion;
 	}
 	
 	public Boolean hayFlor(){
