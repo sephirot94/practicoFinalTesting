@@ -17,10 +17,10 @@ public class Juego {
 		Menu menu = new Menu();
 		InputProvider input = new InputProvider();
 		Juego.setFin(false);
-		Integer cantidad_jugadores = menu.menuInicial();
+		Integer cantidad_jugadores_equipo = menu.menuInicial();
 		String nombre_jugador = menu.menuNombre();
-		Equipo equipo_jugador = new Equipo(cantidad_jugadores, nombre_jugador);
-		Equipo equipo_oponente = new Equipo(cantidad_jugadores);
+		Equipo equipo_jugador = new Equipo(cantidad_jugadores_equipo, nombre_jugador);
+		Equipo equipo_oponente = new Equipo(cantidad_jugadores_equipo);
 		Jugador user = equipo_jugador.getIntegrantes().get(0);
 		do {
 			mazo.mezclarMazo();
@@ -39,12 +39,20 @@ public class Juego {
 				posicion += 3;
 			}
 			for(Integer i=0;i<3;i++){
-				menu.menuCartas(equipo_jugador.getIntegrantes().get(0).getMano());
-				Integer carta = input.getIntegerInput();
-				user.jugarCarta(carta);
-				equipo_oponente.getIntegrantes().get(0).jugarCarta(Mano.getPosicionCartaMayorValor(equipo_oponente.getIntegrantes().get(0).getMano()));
-				equipo_jugador.getIntegrantes().get(1).jugarCarta(Mano.getPosicionCartaMayorValor(equipo_jugador.getIntegrantes().get(1).getMano()));
-				equipo_oponente.getIntegrantes().get(1).jugarCarta(Mano.getPosicionCartaMayorValor(equipo_oponente.getIntegrantes().get(1).getMano()));
+				if(cantidad_jugadores_equipo == 2){
+					menu.menuCartas(equipo_jugador.getIntegrantes().get(0).getMano());
+					Integer carta = input.getIntegerInput();
+					user.jugarCarta(carta-1);
+					equipo_oponente.getIntegrantes().get(0).jugarCarta(Mano.getPosicionCartaMayorValor(equipo_oponente.getIntegrantes().get(0).getMano()));
+					equipo_jugador.getIntegrantes().get(1).jugarCarta(Mano.getPosicionCartaMayorValor(equipo_jugador.getIntegrantes().get(1).getMano()));
+					equipo_oponente.getIntegrantes().get(1).jugarCarta(Mano.getPosicionCartaMayorValor(equipo_oponente.getIntegrantes().get(1).getMano()));
+				}
+				else{
+					menu.menuCartas(equipo_jugador.getIntegrantes().get(0).getMano());
+					Integer carta = input.getIntegerInput();
+					user.jugarCarta(carta-1);
+					equipo_oponente.getIntegrantes().get(0).jugarCarta(Mano.getPosicionCartaMayorValor(equipo_oponente.getIntegrantes().get(0).getMano()));
+				}
 			}
 			menu.menuFinal();
 		} while (!Juego.getFin());
