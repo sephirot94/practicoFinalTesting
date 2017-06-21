@@ -87,9 +87,8 @@ public class Juego {
 					menu.menuCartas(equipo_jugador.getIntegrantes().get(0).getMano());
 					Integer carta = input.getIntegerInput();
 					user.jugarCarta(carta-1);
-					System.out.println("Turno de: Openente");
+					System.out.println("Turno de: Oponente");
 					equipo_oponente.getIntegrantes().get(0).jugarCarta(Mano.getPosicionCartaMayorValor(equipo_oponente.getIntegrantes().get(0).getMano()));
-					System.out.println("El oponente jugo: " + equipo_oponente.getIntegrantes().get(0).jugarCarta(Mano.getPosicionCartaMayorValor(equipo_oponente.getIntegrantes().get(0).getMano())).getNumero() + equipo_oponente.getIntegrantes().get(0).jugarCarta(Mano.getPosicionCartaMayorValor(equipo_oponente.getIntegrantes().get(0).getMano())).getPalo());
 				}
 			}
 			menu.menuFinal();
