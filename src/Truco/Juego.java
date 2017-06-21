@@ -38,6 +38,7 @@ public class Juego {
 				jugador.setMano(mano);
 				posicion += 3;
 			}
+			menu.menuCartas(equipo_jugador.getIntegrantes().get(0).getMano());
 			for(Integer i=0;i<3;i++){
 				if(!ronda.getEnvido() && i==0) {
 					System.out.println("Sus cartas: ");
