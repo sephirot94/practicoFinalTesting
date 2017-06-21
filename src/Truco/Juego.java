@@ -47,6 +47,7 @@ public class Juego {
 					}while(!input.controladorInput(num, 1, 2));
 					if(num == 1) {
 						ronda.setEnvido(Boolean.TRUE);
+						//Jugar el ENVIDO!!!!!
 					}
 				}
 				if(!ronda.getTruco()) {
@@ -61,6 +62,7 @@ public class Juego {
 						}
 						if(aux_num == 2){
 							ronda.setReTruco(Boolean.FALSE);
+							//Terminar RONDA!!
 						}
 						if(aux_num == 3){
 							ronda.setValeCuatro(Boolean.TRUE);
@@ -72,15 +74,12 @@ public class Juego {
 					menu.menuCartas(equipo_jugador.getIntegrantes().get(0).getMano());
 					Integer carta = input.getIntegerInput();
 					user.jugarCarta(carta-1);
-					System.out.println("Turno de: Openente1");
+					System.out.println("Turno de: Oponente1");
 					equipo_oponente.getIntegrantes().get(0).jugarCarta(Mano.getPosicionCartaMayorValor(equipo_oponente.getIntegrantes().get(0).getMano()));
-					System.out.println("El oponente 1 jugo: " + equipo_oponente.getIntegrantes().get(0).jugarCarta(Mano.getPosicionCartaMayorValor(equipo_oponente.getIntegrantes().get(0).getMano())).getNumero() + equipo_oponente.getIntegrantes().get(0).jugarCarta(Mano.getPosicionCartaMayorValor(equipo_oponente.getIntegrantes().get(0).getMano())).getPalo());
 					System.out.println("Turno de: Compañero");
 					equipo_jugador.getIntegrantes().get(1).jugarCarta(Mano.getPosicionCartaMayorValor(equipo_jugador.getIntegrantes().get(1).getMano()));
-					System.out.println("El companero jugo: " + equipo_jugador.getIntegrantes().get(1).jugarCarta(Mano.getPosicionCartaMayorValor(equipo_jugador.getIntegrantes().get(1).getMano())).getNumero() + equipo_jugador.getIntegrantes().get(1).jugarCarta(Mano.getPosicionCartaMayorValor(equipo_jugador.getIntegrantes().get(1).getMano())).getPalo());
 					System.out.println("Turno de: Oponente2");
 					equipo_oponente.getIntegrantes().get(1).jugarCarta(Mano.getPosicionCartaMayorValor(equipo_oponente.getIntegrantes().get(1).getMano()));
-					System.out.println("El oponente 2 jugo: " + equipo_oponente.getIntegrantes().get(1).jugarCarta(Mano.getPosicionCartaMayorValor(equipo_oponente.getIntegrantes().get(1).getMano())).getNumero() + equipo_oponente.getIntegrantes().get(1).jugarCarta(Mano.getPosicionCartaMayorValor(equipo_oponente.getIntegrantes().get(1).getMano())).getPalo());
 				}
 				else{
 					System.out.println("Turno de: " + nombre_jugador);
