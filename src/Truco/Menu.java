@@ -44,7 +44,7 @@ public class Menu {
 		return input.getStringInput();
 	}
 
-	public void menuCantarTruco() {
+	public Integer menuCantarTruco() {
 		InputProvider input = new InputProvider();
 		Integer num1;
 		do{
@@ -53,9 +53,10 @@ public class Menu {
 			System.out.println("2) No");
 			num1 = input.getIntegerInput();
 		}while(!input.controladorInput(num1, 1, 2));
+		return num1;
 	}
 	
-	public void menuRespuestaReTruco() {
+	public Integer menuRespuestaReTruco() {
 		InputProvider input = new InputProvider();
 		Integer num1;
 		do{
@@ -65,6 +66,7 @@ public class Menu {
 			System.out.println("3) Quiero vale 4");
 			num1 = input.getIntegerInput();
 		}while(!input.controladorInput(num1, 1, 3));
+		return num1;
 	}
 	
 	public void menuCartas(Mano cartas) {

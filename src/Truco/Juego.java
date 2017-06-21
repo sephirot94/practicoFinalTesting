@@ -50,18 +50,12 @@ public class Juego {
 					}
 				}
 				if(!ronda.getTruco()) {
-					menu.menuCantarTruco();
 					Integer num;
-					do{
-						num = input.getIntegerInput();
-					}while(!input.controladorInput(num, 1, 2));
+					num = menu.menuCantarTruco();
 					if(num == 1){
 						ronda.setTruco(Boolean.TRUE);
-						menu.menuRespuestaReTruco();
 						Integer aux_num;
-						do{
-							aux_num = input.getIntegerInput();
-						}while(input.controladorInput(aux_num, 1, 3));
+						aux_num = menu.menuRespuestaReTruco();	
 						if(aux_num == 1){
 							ronda.setReTruco(Boolean.TRUE);
 						}
