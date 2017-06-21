@@ -40,10 +40,7 @@ public class Juego {
 			}
 			menu.menuCartas(equipo_jugador.getIntegrantes().get(0).getMano());
 			for(Integer i=0;i<3;i++){
-				if(!ronda.getEnvido() && i==0) {
-					System.out.println("Sus cartas: ");
-					for(Carta carta : user.getMano().getMano()) 
-						System.out.println(carta.getNumero() + " " + carta.getPalo());					
+				if(!ronda.getEnvido() && i==0) {									
 					menu.menuEnvido();
 					Integer num;
 					do{
