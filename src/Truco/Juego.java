@@ -39,7 +39,10 @@ public class Juego {
 				posicion += 3;
 			}
 			for(Integer i=0;i<3;i++){
-				if(!ronda.getEnvido()) {
+				if(!ronda.getEnvido() && i==0) {
+					System.out.println("Sus cartas: ");
+					for(Carta carta : user.getMano().getMano()) 
+						System.out.println(carta.getNumero() + " " + carta.getPalo());					
 					menu.menuEnvido();
 					Integer num;
 					do{
@@ -47,7 +50,8 @@ public class Juego {
 					}while(!input.controladorInput(num, 1, 2));
 					if(num == 1) {
 						ronda.setEnvido(Boolean.TRUE);
-						//Jugar el ENVIDO!!!!!
+						System.out.println(user.getMano().envido());
+						System.out.println("Oponente: " + equipo_oponente.getIntegrantes().get(0).getMano().envido());
 					}
 				}
 				if(!ronda.getTruco()) {
@@ -61,15 +65,15 @@ public class Juego {
 							ronda.setReTruco(Boolean.TRUE);
 						}
 						if(aux_num == 2){
-							ronda.setReTruco(Boolean.FALSE);
-							//Terminar RONDA!!
+							ronda.setReTruco(Boolean.FALSE);							
+							Juego.setFin(true);
 						}
 						if(aux_num == 3){
 							ronda.setValeCuatro(Boolean.TRUE);
 						}
 					}
 				}
-				if(cantidad_jugadores_equipo == 2){
+				if(cantidad_jugadores_equipo == 2 && !Juego.getFin()){
 					System.out.println("Turno de: " + nombre_jugador);
 					menu.menuCartas(equipo_jugador.getIntegrantes().get(0).getMano());
 					Integer carta = input.getIntegerInput();
@@ -81,7 +85,7 @@ public class Juego {
 					System.out.println("Turno de: Oponente2");
 					equipo_oponente.getIntegrantes().get(1).jugarCarta(Mano.getPosicionCartaMayorValor(equipo_oponente.getIntegrantes().get(1).getMano()));
 				}
-				else{
+				if(cantidad_jugadores_equipo == 1 && !Juego.getFin()){
 					System.out.println("Turno de: " + nombre_jugador);
 					menu.menuCartas(equipo_jugador.getIntegrantes().get(0).getMano());
 					Integer carta = input.getIntegerInput();

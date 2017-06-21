@@ -4,7 +4,7 @@ import java.io.InputStream;
 import java.util.Scanner;
 
 public class InputProvider {
-
+	
 	public InputProvider(){
 
 	}
@@ -14,12 +14,13 @@ public class InputProvider {
 		return getIntegerInput(System.in);
 	}
 
+	@SuppressWarnings("resource")
 	public Integer getIntegerInput(InputStream readFrom) {	
 		Boolean valid = true;
 		Integer returnable = null;
 		do{
 			valid = true;
-			try {
+			try {				
 				Scanner scanner = new Scanner(readFrom);
 				System.in.skip(System.in.available());
 				returnable = scanner.nextInt();
@@ -31,6 +32,7 @@ public class InputProvider {
 		return returnable;
 	}
 	
+	@SuppressWarnings("resource")
 	public String getStringInput() throws Exception{
 		Scanner scanner = new Scanner(System.in);
 		System.in.skip(System.in.available());

@@ -22,7 +22,6 @@ public class Menu {
 	public void menuFinal() {
 		InputProvider input = new InputProvider();
 		Integer num1;
-		Integer num2;
 		do{
 			System.out.println("Desea seguir jugando: ");
 			System.out.println("1) Si");
