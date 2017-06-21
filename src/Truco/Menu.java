@@ -6,17 +6,8 @@ public class Menu {
 
 	}
 
-	public Integer menuInicial(){
-		InputProvider input = new InputProvider();
-		Integer num;
-		System.out.println("Vamos a jugar al truco");
-		do{
-			System.out.println("Elija cantidad de jugadores: ");
-			System.out.println("1) 2 Jugadores");
-			System.out.println("2) 4 Jugadores");
-			num = input.getIntegerInput();
-		}while(!input.controladorInput(num, 1, 2));
-		return num;
+	public void menuInicial(){
+		System.out.println("Vamos a jugar al truco :");
 	}
 
 	public void menuFinal() {

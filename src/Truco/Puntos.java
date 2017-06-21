@@ -6,7 +6,7 @@ public class Puntos {
 	private Integer puntos;
 	
 	public Puntos(){
-		
+		this.setPuntos(0);
 	}
 
 	public Integer getPuntos() {

@@ -97,7 +97,7 @@ public class Ronda {
 		this.setValeCuatro(Boolean.TRUE);
 	}
 	
-	public String compararCartas(Carta carta1, Carta carta2){
+	public static String compararCartas(Carta carta1, Carta carta2){
 		if(carta1.getValor() > carta2.getValor()){
 			return "ganador carta 1";
 		}
